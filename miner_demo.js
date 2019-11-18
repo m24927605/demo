@@ -22,7 +22,7 @@ while(1) {
   };
   var cal = hash1(JSON.stringify(header));
   console.log(cal);
-  if (parseInt(cal, 16) < parseInt("0000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF", 16)) {
+  if (parseInt(cal, 16) < parseInt("0000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF", 16)) {//假設的目標值
     console.log("success: " + cal);
     console.log("counts for:" + nonce + ' tiems')
     break;
