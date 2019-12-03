@@ -10,9 +10,11 @@
     "bitcoinjs-libv3": "npm:bitcoinjs-lib@^3.3.2",
     "bitcoinjs-libv5": "npm:bitcoinjs-lib@^5.1.6",
     "bs58": "^4.0.1",
+    "coinstring": "^2.3.0",
     "elliptic": "^6.5.2",
     "ethereumjs-util": "^6.2.0",
     "ethereumjs-wallet": "^0.6.3",
+    "hdkey": "^1.1.1",
     "ripemd160": "^2.0.2",
     "secp256k1": "^3.7.1",
     "wif": "^2.0.6"

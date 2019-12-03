@@ -1,5 +1,0 @@
-const secp256k1 = require('secp256k1')
-const wif = require('wif')
-const wifObj = wif.decode('KyEiqpBsHMitYEbYJE6Xsjmukmd4EwMHdRbum4F3uLHSP12qC86w')
-const publickey= secp256k1.publicKeyCreate(wifObj.privateKey, true).slice(1).toString('hex')
-console.log('publickey',publickey)
