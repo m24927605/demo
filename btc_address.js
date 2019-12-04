@@ -6,6 +6,7 @@ const bip32 = require('bip32')
 	const { address:p2pkhAddress } = bitcoin.payments.p2pkh({
 				pubkey: bip32.fromBase58(xpub).derive(0).derive(0).publicKey,
 	})
+	const { address:segwitAddress } = bitcoin.payments.p2wpkh({ pubkey: bip32.fromBase58(xpub).derive(0).derive(0).publicKey });
 	const { address:p2shAddress } = bitcoin.payments.p2sh({
 		redeem: bitcoin.payments.p2wpkh({
 			pubkey: bip32
@@ -14,6 +15,8 @@ const bip32 = require('bip32')
 				.derive(0).publicKey,
 		}),
 	});
+	
 	console.log(`p2pkh address is ${p2pkhAddress}`)
-	console.log(`p2sh address is ${p2shAddress}`)
+	console.log(`segwit address is ${segwitAddress}`)
+	console.log(`SegWit address (via P2SH) is ${p2shAddress}`)
 })()
