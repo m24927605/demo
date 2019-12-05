@@ -11,10 +11,12 @@ const bip39 = require('bip39')
   const masterNode =  bip32.fromSeed(seedBuffer,TESTNET)
   const xpri=masterNode.toBase58();
   const xpub = masterNode.derivePath(`m/44'/0'/0'`).neutered().toBase58()
-  const wifkey=masterNode.derivePath(`m/44'/0'/0'/0/1`).toWIF();
+  const wifkey0=masterNode.derivePath(`m/44'/0'/0'/0/0`).toWIF();
+  const wifkey1=masterNode.derivePath(`m/44'/0'/0'/0/1`).toWIF();
   console.log('[xpri]',xpri)
   console.log('[xpub]',xpub)
-  console.log('[wifkey]',wifkey)
+  console.log('[wifkey0]',wifkey0)
+  console.log('[wifkey1]',wifkey1)
 
 	const { address:p2pkhAddress0 } = bitcoin.payments.p2pkh({
         pubkey: bip32.fromBase58(xpub,TESTNET).derive(0).derive(0).publicKey,
